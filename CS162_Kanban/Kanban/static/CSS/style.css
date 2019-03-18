@@ -1,0 +1,133 @@
+/*style of the web pages*/
+
+.container{
+    width: 100%;
+    float:left;
+    clear: both;
+    margin:20px;
+    border-radius: 5px;
+}
+
+.head{
+    width: 100%;
+    margin:0;
+}
+
+.doing{
+    width: 31.3%;
+    float:left;
+    clear: right;
+    margin:10px;
+    border-radius: 5px;
+}
+
+.doinghead{
+    background-color:red;
+    text-align: center;
+    margin:0 0 15px 0;
+    padding:5px;
+    border-radius: 5px;
+}
+
+.doingform{
+    background-color:rgb(199, 112, 112);
+    margin:10px 0;
+    padding:5px;
+    border-radius: 5px;
+}
+
+.doinglist{
+    background-color:rgb(199, 112, 112);
+    margin:10px 0;
+    padding:5px;
+    border-radius: 5px;
+    height:130px;
+    word-wrap:break-word;
+    word-break:break-all;
+    overflow: hidden;
+}
+
+.center{
+    text-align: center;
+}
+
+.todo{
+    width: 31.3%;
+    float:left;
+    clear: right;
+    margin:10px;
+    border-radius: 5px;
+}
+
+.todoform{
+    background-color:rgb(173, 199, 112);
+    margin:10px 0;
+    padding:5px;
+    border-radius: 5px;
+}
+
+.todohead{
+    background-color:yellow;
+    text-align: center;
+    margin:0 0 15px 0;
+    padding:5px;
+    border-radius: 5px;
+}
+
+.todolist{
+    background-color:rgb(173, 199, 112);
+    margin:10px 0;
+    padding:5px;
+    border-radius: 5px;
+    height:130px;
+    word-wrap:break-word;
+    word-break:break-all;
+    overflow: hidden;
+}
+
+.done{
+    width: 31.3%;
+    float:left;
+    clear: right;
+    margin:10px;
+    border-radius: 5px;
+}
+
+.donehead{
+    background-color:green;
+    text-align: center;
+    margin:0 0 15px 0;
+    padding:5px;
+    border-radius: 5px;
+}
+
+.doneform{
+    background-color:rgb(130, 207, 134);
+    margin:10px 0;
+    padding:5px;
+    border-radius: 5px;
+}
+
+.donelist{
+    background-color:rgb(130, 207, 134);
+    margin:10px 0;
+    padding:5px;
+    border-radius: 5px;
+    height:130px;
+    word-wrap:break-word;
+    word-break:break-all;
+    overflow: hidden;
+}
+
+.fullinput{
+    width:98%;
+}
+
+textarea{
+    resize:vertical;
+}
+
+.hide{
+    overflow: scroll;
+    height: 82px;
+}

@@ -1,0 +1,116 @@
+{#structure of the pages#}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KanBan Board</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/style.css')}}">
+</head>
+<body style="background-color: grey;" >
+    <div>
+        <div class="head" >
+            <h1 style="color: white;" class="center">KanBan Board</h1>
+        </div>
+
+        <div>
+
+            <div class="doing">
+                <div class="doinghead"><h2>DOING</h2></div>
+                <div class="doingform">
+                    <form action="/add1" method="POST">
+                        <div style="border-bottom:1.5px solid white"><b style="font-size:22px;color: white">New Event</b> </div>
+                        <div style="color: white">Title:</div> <input class="fullinput" maxlength="25" type="text" name="title1" size="70"> <br>
+                        <div style="color: white">Description:</div> <textarea class="fullinput" name="description1" id="description1" cols="68" rows="3"></textarea>
+                        <input type="submit">
+                    </form>
+                </div>
+                <div>
+                    {% for doing in doings %}
+                        <div class="doinglist">
+                            <div>
+                                <div style="border-bottom:1.5px solid black"><b style="font-size: 22px;">{{ doing.title }}</b> <br></div>
+                                <div class="hide">{{ doing.description }}</div>
+                            </div>
+                            <div>
+                                <form action="/change1" method="POST">
+                                    <input type="hidden" name="id" value="{{ doing.id }}">
+                                    <input type="hidden" name="title" value="{{ doing.title }}">
+                                    <input type="hidden" name="description" value="{{ doing.description }}">
+                                    <input type="submit" name="doing" value="DONE">
+                                    <input type="submit" name="doing" value="TODO" >
+                                    <input type="submit" name="doing" value="DELETE" >
+                                </form>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="todo">
+                <div class="todohead"><h2>TO DO</h2></div>
+                <div class="todoform">
+                    <form action="/add2" method="POST">
+                        <div style="border-bottom:1.5px solid white"><b style="font-size:22px;color: white">New Event</b> </div>
+                        <div style="color: white">Title:</div> <input class="fullinput" maxlength="25" type="text" name="title2" size="70"><br>
+                        <div style="color: white">Description:</div> <textarea class="fullinput" name="description2" id="description2" cols="68" rows="3"></textarea>
+                        <input type="submit">
+                    </form>
+                </div>
+                <div>
+                    {% for todo in todos %}
+                        <div class="todolist">
+                            <div>
+                                <div style="border-bottom:1.5px solid black"><b style="font-size: 22px">{{ todo.title }}</b> <br></div>
+                                <div class="hide">{{ todo.description }}</div>
+                            </div>
+                            <div>
+                                <form action="/change2" method="POST">
+                                    <input type="hidden" name="id" value="{{ todo.id }}">
+                                    <input type="hidden" name="title" value="{{ todo.title }}">
+                                    <input type="hidden" name="description" value="{{ todo.description }}">
+                                    <input type="submit" name="todo" value="DONE">
+                                    <input type="submit" name="todo" value="DOING">
+                                    <input type="submit" name="todo" value="DELETE">
+                                </form>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="done">
+                <div class="donehead"><h2>DONE</h2></div>
+                <div class="doneform">
+                    <form action="add3" method="POST">
+                        <div style="border-bottom:1.5px solid white"><b style="font-size:22px;color: white">New Event</b> </div>
+                        <div style="color: white">Title:</div> <input class="fullinput" maxlength="25" type="text" name="title3" size="70"> <br>
+                        <div style="color: white">Description:</div> <textarea class="fullinput" name="description3" id="description3" cols="68" rows="3"></textarea>
+                        <input type="submit">
+                    </form>
+                </div>
+                <div>
+                    {% for done in dones %}
+                        <div class="donelist">
+                            <div>
+                                <div style="border-bottom:1.5px solid black"><b style="font-size: 22px">{{ done.title }}</b> <br></div>
+                                <div class="hide">{{ done.description }}</div>
+                            </div>
+                            <div>
+                                <form action="/change3" method="POST">
+                                    <input type="hidden" name="id" value="{{ done.id }}">
+                                    <input type="hidden" name="title" value="{{ done.title }}">
+                                    <input type="hidden" name="description" value="{{ done.description }}">
+                                    <input type="submit" name="done" value="DOING">
+                                    <input type="submit" name="done" value="TODO">
+                                    <input type="submit" name="done" value="DELETE">
+                                </form>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
