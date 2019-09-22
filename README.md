@@ -1,2 +1,2 @@
 # Kanban Project
-# An online schedule planning application
+### An online schedule planning application
